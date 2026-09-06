@@ -1,0 +1,9 @@
+<div class="roadmap">
+  {% for r in roadmap %}
+  <div class="roadmap__item a-{{ r.accent or 'gold' }}">
+    <span class="roadmap__dot"></span>
+    <h4>{{ r.name }}</h4>
+    <p>{{ r.body }}</p>
+  </div>
+  {% endfor %}
+</div>

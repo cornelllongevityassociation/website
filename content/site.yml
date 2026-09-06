@@ -1,0 +1,66 @@
+# ============================================================================
+#  SITE-WIDE SETTINGS
+#  Everything here appears on every page. Edit the text, save, done.
+# ============================================================================
+
+name: Cornell Longevity Association
+short_name: CLA
+tagline: A student hub for longevity science across Cornell.
+
+# Shown in the browser tab after the page name, e.g. "About · Cornell Longevity Association"
+title_suffix: Cornell Longevity Association
+
+# Only used by the 404 page, which has to link home from an unknown URL.
+#   Served from   https://<org>.github.io/website/   ->  base_url: /website
+#   Served from   https://your-own-domain.org/       ->  base_url: (leave blank)
+base_url: /website
+
+# Used for social sharing previews and SEO.
+description: >-
+  The Cornell Longevity Association connects students and faculty across the
+  Ithaca, Cornell Tech, and Weill Cornell campuses around the science, ethics,
+  and industry of human longevity.
+
+# ---------------------------------------------------------------------------
+# NAVIGATION — the links across the top of every page.
+# Reorder, rename, add or remove freely. "url" must match a page file name.
+# ---------------------------------------------------------------------------
+nav:
+  - label: About
+    url: about.html
+  - label: Branches
+    url: branches.html
+  - label: Team
+    url: team.html
+  - label: Events
+    url: events.html
+  - label: Join Us
+    url: join.html
+
+# The button at the far right of the navigation bar.
+nav_cta:
+  label: Get Involved
+  url: join.html
+
+# ---------------------------------------------------------------------------
+# CONTACT + SOCIAL
+# Delete any line you don't have yet and the link will disappear from the site.
+# ---------------------------------------------------------------------------
+contact:
+  email: cornelllongevityassociation@gmail.com
+
+social:
+  instagram: https://instagram.com/
+  linkedin:
+  github: https://github.com/cornelllongevityassociation
+
+# ---------------------------------------------------------------------------
+# FOOTER
+# ---------------------------------------------------------------------------
+footer:
+  blurb: >-
+    A student organization at Cornell University bringing together research,
+    philosophy, and industry around the biology of aging.
+  note: >-
+    Cornell Longevity Association is a student-run organization. Views expressed
+    here are those of its members and do not represent Cornell University.

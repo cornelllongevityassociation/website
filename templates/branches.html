@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "_banner.html" %}
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="visually-hidden">The branches</h2>
+    <div class="grid grid--3">
+      {% for b in branches %}
+      <article class="card a-{{ b.accent or 'gold' }}" id="{{ b.slug }}">
+        <div class="card__icon">{{ icon(branch_icons[loop.index0 % branch_icons|length]) }}</div>
+        <h3>{{ b.name }}</h3>
+        <p>{{ b.summary }}</p>
+        {% if b.points %}
+        <ul>
+          {% for p in b.points %}<li>{{ p }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        {% if b.representative %}
+        <div class="card__foot">
+          {% set rep = rep_lookup.get(b.representative) %}
+          Led by the {{ b.representative }}{% if rep and rep.holder %}, {{ rep.holder }}{% elif rep %} — <a href="join.html">position open</a>{% endif %}.
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if page.body_html %}
+<section class="section section--tight">
+  <div class="wrap"><div class="prose">{{ page.body_html }}</div></div>
+</section>
+{% endif %}
+
+{% if page.outro_heading %}
+<section class="section section--alt">
+  <div class="wrap wrap--narrow" style="text-align:center">
+    <h2>{{ page.outro_heading }}</h2>
+    <p style="color:var(--ink-muted);font-size:1.1rem">{{ page.outro_body }}</p>
+    {% if page.outro_button %}
+    <p style="margin-top:1.5rem"><a class="btn btn--dark" href="{{ page.outro_button.url }}">{{ page.outro_button.label }}</a></p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "_banner.html" %}
+
+{% if page.body_html %}
+<section class="section">
+  <div class="wrap">
+    <div class="prose">{{ page.body_html }}</div>
+  </div>
+</section>
+{% endif %}
+
+{% if goals %}
+<section class="section section--alt">
+  <div class="wrap wrap--narrow">
+    <div class="section-head">
+      <p class="eyebrow">Our aims</p>
+      <h2>{{ page.goals_heading }}</h2>
+    </div>
+    <ol class="goals">
+      {% for g in goals %}
+      <li><span class="goals__num">{{ "%02d"|format(loop.index) }}</span><span>{{ g }}</span></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+{% if values %}
+<section class="section section--dark">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">What we stand for</p>
+      <h2>{{ page.values_heading }}</h2>
+    </div>
+    <div class="grid grid--3">
+      {% for v in values %}
+      <article class="value a-{{ v.accent or 'gold' }}">
+        <div class="value__dot">{{ icon(value_icons[loop.index0 % value_icons|length]) }}</div>
+        <h3>{{ v.name }}</h3>
+        <p>{{ v.body }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if advisors %}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Guidance</p>
+      <h2>{{ page.advisors_heading }}</h2>
+      <p>{{ page.advisors_body }}</p>
+    </div>
+    <div class="grid grid--3">
+      {% for a in advisors %}{% include "_advisor.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if roadmap %}
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Roadmap</p>
+      <h2>{{ page.roadmap_heading }}</h2>
+      <p>{{ page.roadmap_body }}</p>
+    </div>
+    {% include "_roadmap.html" %}
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

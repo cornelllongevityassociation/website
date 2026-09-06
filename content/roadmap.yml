@@ -1,0 +1,37 @@
+# ============================================================================
+#  UPCOMING GOALS — the timeline strip.
+#  `status` may be:  done  |  active  |  next
+# ============================================================================
+
+- name: Club Application
+  status: active
+  accent: blue
+  body: Prepare everything necessary for club applications in October.
+
+- name: Recruitment
+  status: active
+  accent: green
+  body: >-
+    Recruit people to fill out e-board positions and find people who are
+    interested in helping.
+
+- name: Website
+  status: active
+  accent: gold
+  body: >-
+    Build a website to put our profiles as well as necessary things we would
+    like to share about the club.
+
+- name: Planning Events
+  status: next
+  accent: coral
+  body: >-
+    Get started on making speaker events or any other events that could help get
+    us started.
+
+- name: Build up Instagram
+  status: next
+  accent: yellow
+  body: >-
+    Have someone manage the Instagram and create posts to help spread the word
+    for our events.

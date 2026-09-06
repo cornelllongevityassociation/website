@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "_banner.html" %}
+
+{% if page.ways %}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Get involved</p>
+      <h2>{{ page.ways_heading }}</h2>
+    </div>
+    <div class="grid grid--2">
+      {% for w in page.ways %}
+      <article class="card a-{{ w.accent or 'gold' }}">
+        <div class="card__icon">{{ icon(join_icons[loop.index0 % join_icons|length]) }}</div>
+        <h3>{{ w.name }}</h3>
+        <p>{{ w.body }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if open_roles %}
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Now hiring</p>
+      <h2>{{ page.open_roles_heading }}</h2>
+      <p>{{ page.open_roles_body }}</p>
+    </div>
+    <div class="grid grid--3">
+      {% for m in open_roles %}
+      <article class="person person--open">
+        <span class="tag tag--open">Open</span>
+        <div class="person__name">{{ m.role }}</div>
+        <div class="person__role">{{ m.positions }} position{{ "s" if m.positions != 1 }}{% if m.group %} · {{ m.group }}{% endif %}</div>
+        <p class="person__desc">{{ m.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% if site.contact and site.contact.email %}
+    <p style="margin-top:2.25rem">
+      <a class="btn btn--primary" href="mailto:{{ site.contact.email }}?subject=E-board%20application%20%E2%80%94%20Cornell%20Longevity%20Association">Email us about a position</a>
+    </p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if page.body_html %}
+<section class="section">
+  <div class="wrap"><div class="prose">{{ page.body_html }}</div></div>
+</section>
+{% endif %}
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="cta-band__text">
+        <h2>{{ page.contact_heading }}</h2>
+        <p>{{ page.contact_body }}</p>
+      </div>
+      <div class="btn-row">
+        {% if site.contact and site.contact.email %}
+        <a class="btn btn--primary" href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+        {% endif %}
+        {% for s in socials %}
+        <a class="btn btn--ghost-invert" href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

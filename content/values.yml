@@ -1,0 +1,25 @@
+# ============================================================================
+#  CORE VALUES
+#  Shown on the homepage and the About page.
+#  "accent" must be one of: gold  green  blue  coral
+# ============================================================================
+
+- name: Unwavering Ethics and Integrity
+  accent: coral
+  body: >-
+    Above all else, we champion strong moral compasses and honesty for guidance
+    among this revolutionary time where the definition of what it means to be
+    human constantly shifts.
+
+- name: Creative Collaboration
+  accent: gold
+  body: >-
+    We aim to foster team ups of all shapes and sizes that lead to creative
+    problem solving and the discovery of new avenues for thinking.
+
+- name: Be Kindious
+  accent: green
+  body: >-
+    Kindious is a combination of the word kind and curious. We wish to learn
+    about any and all exciting projects or research done in the field of
+    longevity, all while showing kindness to others every step of the way.

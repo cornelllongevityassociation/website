@@ -1,0 +1,43 @@
+# ============================================================================
+#  THE THREE BRANCHES OF THE CLUB
+#  Add, remove, or reorder branches freely — the site adapts to how many
+#  there are. "accent" picks the colour and must be one of:
+#      gold   green   blue   coral
+# ============================================================================
+
+- name: Scientific Research
+  accent: gold
+  summary: >-
+    Sharing and discussing the longevity research happening inside Cornell's
+    own labs.
+  points:
+    - Share and discuss the latest longevity research going on at Cornell
+    - >-
+      Run activities focused on keeping a healthy body and mind, from
+      biohacking sessions to mental health workshops
+    - Host speaker Q&As on the research being developed in our labs
+  representative: Scientific Research Representative
+
+- name: Philosophy, Ethics and Arts
+  accent: green
+  summary: >-
+    The harder questions — and the creative work — that a longer human life
+    brings with it.
+  points:
+    - >-
+      Engage students in the ethical and philosophical debates around longevity,
+      as well as the fine arts
+    - Lead dance workshops, painting sessions, debate series, and discussion groups
+    - Host a dance show or a student-led art gallery
+  representative: Philosophy, Ethics and Arts Representative
+
+- name: Industry
+  accent: blue
+  summary: >-
+    The bridge between Cornell students and the people building longevity
+    companies.
+  points:
+    - Support student-led initiatives and connections to professional development
+    - Highlight what the current market for longevity science actually looks like
+    - Run speaker series and networking events with the industry's latest pioneers
+  representative: Industry Representative

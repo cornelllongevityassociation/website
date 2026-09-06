@@ -1,0 +1,26 @@
+# ============================================================================
+#  FACULTY ADVISORS
+#  `status: prospective` adds a small "Prospective" tag to the card.
+#  Remove that line once someone has formally agreed to advise the club.
+# ============================================================================
+
+- name: Michael Byrne
+  title:
+  affiliation: Cornell University
+  status: prospective
+  photo:
+  bio:
+
+- name: Thalia Viranda
+  title:
+  affiliation: Cornell University
+  status: prospective
+  photo:
+  bio:
+
+- name: Mark Lachs
+  title:
+  affiliation: Weill Cornell Medicine
+  status: prospective
+  photo:
+  bio:

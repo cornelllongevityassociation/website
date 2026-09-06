@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "_banner.html" %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Executive board</p>
+      <h2>{{ page.eboard_heading }}</h2>
+      <p>{{ page.eboard_body }}</p>
+    </div>
+
+    {% for group, members in team_groups %}
+    <div class="team-group">
+      <h3 class="team-group__title">{{ group }}</h3>
+      <div class="grid grid--3 grid--team">
+        {% for m in members %}
+        <article class="person{% if not m.holder %} person--open{% endif %}">
+          {% if m.photo %}
+          <img class="person__avatar" src="assets/img/{{ m.photo }}" alt="{{ m.holder }}" loading="lazy" width="68" height="68">
+          {% else %}
+          <div class="person__avatar" aria-hidden="true">{{ m.initials }}</div>
+          {% endif %}
+
+          {% if not m.holder %}<span class="tag tag--open">Open</span>{% endif %}
+
+          <div class="person__name">{{ m.holder or "Position open" }}</div>
+          <div class="person__role">{{ m.role }}{% if m.positions and m.positions != 1 %} · {{ m.positions }} positions{% endif %}</div>
+          {% if m.description %}<p class="person__desc">{{ m.description }}</p>{% endif %}
+
+          {% if m.email or m.linkedin %}
+          <div class="person__meta">
+            {% if m.email %}<a href="mailto:{{ m.email }}">{{ icon("mail") }}Email</a>{% endif %}
+            {% if m.linkedin %}<a href="{{ m.linkedin }}" target="_blank" rel="noopener">{{ icon("linkedin") }}LinkedIn</a>{% endif %}
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    {% if open_roles and page.open_roles_cta %}
+    <p style="margin-top:2.5rem">
+      <a class="btn btn--primary" href="{{ page.open_roles_cta.url }}">{{ page.open_roles_cta.label }}</a>
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+{% if advisors %}
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Guidance</p>
+      <h2>{{ page.advisors_heading }}</h2>
+      <p>{{ page.advisors_body }}</p>
+    </div>
+    <div class="grid grid--3">
+      {% for a in advisors %}{% include "_advisor.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if page.body_html %}
+<section class="section">
+  <div class="wrap"><div class="prose">{{ page.body_html }}</div></div>
+</section>
+{% endif %}
+
+{% endblock %}

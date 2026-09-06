@@ -1,0 +1,19 @@
+<article class="event{% if e.is_past %} event--past{% endif %}">
+  <div class="event__date">
+    <div class="event__month">{{ e.month }}</div>
+    <div class="event__day">{{ e.day }}</div>
+    <div class="event__year">{{ e.year }}</div>
+  </div>
+  <div class="event__body">
+    <div class="event__meta">
+      {% if e.time %}<span>{{ icon("clock") }}{{ e.time }}</span>{% endif %}
+      {% if e.location %}<span>{{ icon("pin") }}{{ e.location }}</span>{% endif %}
+      {% if e.branch %}<span>{{ icon("dot") }}{{ e.branch }}</span>{% endif %}
+    </div>
+    <h3>{{ e.title }}</h3>
+    {% if e.description %}<p>{{ e.description }}</p>{% endif %}
+  </div>
+  {% if e.link %}
+  <div><a class="btn btn--ghost btn--sm" href="{{ e.link }}" target="_blank" rel="noopener">Details</a></div>
+  {% endif %}
+</article>

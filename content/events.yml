@@ -1,0 +1,34 @@
+# ============================================================================
+#  EVENTS
+#
+#  Add a new event by copying one of the commented-out blocks below.
+#  Events are sorted by date automatically. Anything dated today or later shows
+#  under "Upcoming"; anything older moves to "Past events" on its own.
+#
+#  date:     YYYY-MM-DD  (required)
+#  time:     free text, e.g. "5:30 – 7:00 PM"
+#  location: free text
+#  branch:   Scientific Research | Philosophy, Ethics and Arts | Industry
+#            (or leave blank for a club-wide event)
+#  link:     optional RSVP / details URL
+# ============================================================================
+
+# - title: Kickoff Interest Meeting
+#   date: 2026-10-08
+#   time: 5:30 – 6:30 PM
+#   location: To be announced
+#   branch:
+#   link:
+#   description: >-
+#     Meet the e-board, hear what each branch is planning this year, and find out
+#     how to get involved.
+
+# - title: Speaker Q&A — Aging Research at Cornell
+#   date: 2026-10-22
+#   time: 6:00 – 7:00 PM
+#   location: To be announced
+#   branch: Scientific Research
+#   link:
+#   description: >-
+#     A conversation with a Cornell lab working on the biology of aging, followed
+#     by open questions from students.

@@ -1,0 +1,77 @@
+{# ---------------------------------------------------------------------------
+   The club's title-slide artwork, rebuilt as scalable SVG:
+   warm charcoal ground, a faint arc, the grey prism wedge, the refracted
+   spectrum, and the outlined grid. Used behind the hero and page banners.
+   `variant` = "hero" (full) or "banner" (quieter, for interior pages).
+--------------------------------------------------------------------------- #}
+{% macro prism_art(variant="hero", id="art") -%}
+<svg class="{{ 'hero__art' if variant == 'hero' else 'banner__art' }}"
+     viewBox="0 0 1456 816" preserveAspectRatio="xMaxYMid slice"
+     aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="{{ id }}-spectrum" x1="0" y1="0" x2="0.18" y2="1">
+      <stop offset="0%"   stop-color="#3D8ECF"/>
+      <stop offset="14%"  stop-color="#3FBF97"/>
+      <stop offset="30%"  stop-color="#57C95F"/>
+      <stop offset="44%"  stop-color="#B6DC4E"/>
+      <stop offset="60%"  stop-color="#FFE24D"/>
+      <stop offset="78%"  stop-color="#EFA83B"/>
+      <stop offset="90%"  stop-color="#F7854A"/>
+      <stop offset="100%" stop-color="#FF5C6E"/>
+    </linearGradient>
+    <linearGradient id="{{ id }}-wedge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#78736D"/>
+      <stop offset="100%" stop-color="#5C5852"/>
+    </linearGradient>
+    <radialGradient id="{{ id }}-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   stop-color="#FFE24D" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="#FFE24D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1456" height="816" fill="#383735"/>
+
+  {# faint arc sweeping in from the top-left #}
+  <path d="M 432 -40 C 432 120, 520 190, 660 178 C 740 171, 786 150, 800 118"
+        fill="none" stroke="#5A5750" stroke-width="1.6" opacity=".85"/>
+
+  {# grey prism wedge converging on the refraction point #}
+  <path d="M 700 -10 L 872 -10 L 928 440 Z" fill="url(#{{ id }}-wedge)"/>
+
+  {# the refracted spectrum #}
+  <path d="M 866 -10 L 1466 -10 L 1466 262 L 928 440 Z" fill="url(#{{ id }}-spectrum)"/>
+
+  {# soft bloom at the point of refraction #}
+  <circle cx="928" cy="430" r="170" fill="url(#{{ id }}-glow)"/>
+
+  {# outlined grid, lower right #}
+  <g fill="none" stroke="#565350" stroke-width="1.5" opacity="{{ '1' if variant == 'hero' else '.55' }}">
+    <rect x="1078" y="448" width="98" height="98"/>
+    <rect x="1274" y="448" width="98" height="98"/>
+    <rect x="1372" y="448" width="98" height="98"/>
+    <rect x="1176" y="546" width="98" height="98"/>
+    <rect x="1274" y="546" width="98" height="98"/>
+    <rect x="1000" y="644" width="98" height="98"/>
+    <rect x="1098" y="644" width="98" height="98"/>
+    <rect x="1274" y="644" width="98" height="98"/>
+  </g>
+</svg>
+{%- endmacro %}
+
+{# The compact logo mark: the prism refraction, reduced to a monogram. #}
+{% macro logo_mark(cls="brand__mark", id="mark") -%}
+<svg class="{{ cls }}" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="{{ id }}-spectrum" x1="0" y1="0" x2="0.25" y2="1">
+      <stop offset="0%"   stop-color="#3D8ECF"/>
+      <stop offset="28%"  stop-color="#57C95F"/>
+      <stop offset="58%"  stop-color="#FFE24D"/>
+      <stop offset="80%"  stop-color="#EFA83B"/>
+      <stop offset="100%" stop-color="#FF5C6E"/>
+    </linearGradient>
+  </defs>
+  <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/>
+  <path d="M14 4 L21 4 L23 21 Z" fill="currentColor" fill-opacity=".55"/>
+  <path d="M21 4 L37 4 L37 13 L23 21 Z" fill="url(#{{ id }}-spectrum)"/>
+</svg>
+{%- endmacro %}

@@ -1,0 +1,112 @@
+{% from "_art.html" import prism_art, logo_mark %}
+{% from "_icons.html" import icon %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.title != "Home" %}{{ page.title }} · {{ site.title_suffix }}{% else %}{{ site.name }}{% endif %}</title>
+<meta name="description" content="{{ page.description or site.description }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{% if page.title and page.title != 'Home' %}{{ page.title }} · {{ site.title_suffix }}{% else %}{{ site.name }}{% endif %}">
+<meta property="og:description" content="{{ page.description or site.description }}">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      {{ logo_mark(id="mark-header") }}
+      <span class="brand__text"><b>Cornell Longevity</b>Association</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="visually-hidden">Menu</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      {% for item in site.nav %}
+      <a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+      {% if site.nav_cta %}
+      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="{{ site.nav_cta.url }}">{{ site.nav_cta.label }}</a></span>
+      {% endif %}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<div class="prism-strip" role="presentation"></div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+
+      <div class="site-footer__brand">
+        <a class="brand" href="index.html">
+          {{ logo_mark(id="mark-footer") }}
+          <span class="brand__text"><b>Cornell Longevity</b>Association</span>
+        </a>
+        <p class="site-footer__blurb">{{ site.footer.blurb }}</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          {% for item in site.nav %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          {% if site.contact and site.contact.email %}
+          <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+          {% endif %}
+          <li>Cornell University<br>Ithaca, NY 14853</li>
+        </ul>
+      </div>
+
+      {% if socials %}
+      <div>
+        <h4>Follow</h4>
+        <div class="social-row">
+          {% for s in socials %}
+          <a href="{{ s.url }}" aria-label="{{ s.label }}" rel="me noopener" target="_blank">{{ icon(s.icon) }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>{{ site.footer.note }}</p>
+      <p>&copy; {{ year }} {{ site.name }}</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

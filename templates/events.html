@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "_banner.html" %}
+
+<section class="section">
+  <div class="wrap">
+    {% if upcoming_events %}
+      <div class="section-head"><h2>{{ page.upcoming_heading }}</h2></div>
+      {% for e in upcoming_events %}{% include "_event.html" %}{% endfor %}
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-state__mark">{{ icon("calendar") }}</div>
+        <h2>{{ page.empty_heading }}</h2>
+        <p>{{ page.empty_body }}</p>
+        {% if page.empty_button %}
+        <a class="btn btn--dark" href="{{ page.empty_button.url }}">{{ page.empty_button.label }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if past_events %}
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head"><h2>{{ page.past_heading }}</h2></div>
+    {% for e in past_events %}{% include "_event.html" %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if page.body_html %}
+<section class="section">
+  <div class="wrap"><div class="prose">{{ page.body_html }}</div></div>
+</section>
+{% endif %}
+
+{% endblock %}

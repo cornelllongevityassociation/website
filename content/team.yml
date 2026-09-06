@@ -1,0 +1,113 @@
+# ============================================================================
+#  EXECUTIVE BOARD
+#
+#  To fill an open role: replace `holder:` (or the TBD entry) with a name.
+#  To add a photo: drop the image in assets/img/team/ and set
+#      photo: team/firstname-lastname.jpg
+#  Leave `photo:` blank and the site shows tidy initials instead.
+#  `email:` and `linkedin:` are optional on every person.
+# ============================================================================
+
+# ---- Leadership -----------------------------------------------------------
+- role: President
+  group: Leadership
+  positions: 1
+  description: >-
+    Oversee all the different sections of the club and make sure that all events
+    are running smoothly.
+  holder: Julian Sethna
+  photo:
+  linkedin:
+  email:
+
+- role: Vice President
+  group: Leadership
+  positions: 1
+  description: >-
+    Act as a secondary lead and take on responsibilities of president when the
+    current president is absent.
+  holder: Joey Frikert
+  photo:
+  linkedin:
+  email:
+
+- role: Secretary
+  group: Leadership
+  positions: 1
+  description: >-
+    Handle official records of the club, deal with internal club paperwork, and
+    send agendas to members.
+  holder: Owen Karmel
+  photo:
+  linkedin:
+  email:
+
+- role: Treasurer
+  group: Leadership
+  positions: 1
+  description: >-
+    Manages the finances of the club, making sure that all funds are properly
+    allocated and tracked.
+  holder: Sam Rabinor
+  photo:
+  linkedin:
+  email:
+
+# ---- Operations -----------------------------------------------------------
+- role: Marketing / Public Relations
+  group: Operations
+  positions: 1
+  description: >-
+    In charge of managing club social media and website. Make posters or reach
+    out for collabs with other clubs.
+  holder: Ilan Epstein
+  photo:
+  linkedin:
+  email:
+
+- role: Events Coordinator
+  group: Operations
+  positions: 1-2
+  description: >-
+    Oversee the planning and logistics of events the club plans to host. Work
+    with each of the heads.
+  holder:
+  photo:
+  linkedin:
+  email:
+
+# ---- Branch representatives ----------------------------------------------
+- role: Scientific Research Representative
+  group: Branch Representatives
+  positions: 1
+  description: >-
+    Keep track of the interests within the members of the Scientific Research
+    section in the club and work with event coordinators for events regarding
+    their section.
+  holder:
+  photo:
+  linkedin:
+  email:
+
+- role: Philosophy, Ethics and Arts Representative
+  group: Branch Representatives
+  positions: 1
+  description: >-
+    Keep track of the interests within the members of the Philosophy, Ethics and
+    Arts section in the club and work with event coordinators for events
+    regarding their section.
+  holder:
+  photo:
+  linkedin:
+  email:
+
+- role: Industry Representative
+  group: Branch Representatives
+  positions: 1
+  description: >-
+    Keep track of the interests within the members of the Industry section in
+    the club and work with event coordinators for events regarding their section.
+  holder:
+  photo:
+  linkedin:
+  email:

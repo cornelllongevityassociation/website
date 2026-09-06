@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% set h = page.hero %}
+<section class="hero">
+  {{ prism_art("hero", "hero") }}
+  <div class="wrap hero__inner">
+    <div class="hero__content">
+      {% if h.eyebrow %}<p class="hero__eyebrow">{{ h.eyebrow }}</p>{% endif %}
+      <h1>{{ h.heading }}</h1>
+      <div class="hero__rule"></div>
+      <p class="hero__sub">{{ h.subheading }}</p>
+      <div class="btn-row">
+        {% if h.primary_button %}<a class="btn btn--primary" href="{{ h.primary_button.url }}">{{ h.primary_button.label }}</a>{% endif %}
+        {% if h.secondary_button %}<a class="btn btn--ghost-invert" href="{{ h.secondary_button.url }}">{{ h.secondary_button.label }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set intro = page.intro %}
+{% if intro %}
+<section class="section">
+  <div class="wrap wrap--narrow" style="text-align:center">
+    <h2>{{ intro.heading }}</h2>
+    <p style="font-size:1.15rem;color:var(--ink-muted);margin-bottom:0">{{ intro.body }}</p>
+  </div>
+</section>
+{% endif %}
+
+{% set bs = page.branches_section %}
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      {% if bs.eyebrow %}<p class="eyebrow">{{ bs.eyebrow }}</p>{% endif %}
+      <h2>{{ bs.heading }}</h2>
+      <p>{{ bs.body }}</p>
+    </div>
+
+    <div class="grid grid--3">
+      {% for b in branches %}
+      <article class="card a-{{ b.accent or 'gold' }}">
+        <div class="card__icon">{{ icon(branch_icons[loop.index0 % branch_icons|length]) }}</div>
+        <h3>{{ b.name }}</h3>
+        <p>{{ b.summary }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if bs.link %}
+    <p style="margin-top:2rem;text-align:center">
+      <a class="arrow-link" href="{{ bs.link.url }}">{{ bs.link.label }}</a>
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+{% set vs = page.values_section %}
+<section class="section section--dark">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      {% if vs.eyebrow %}<p class="eyebrow">{{ vs.eyebrow }}</p>{% endif %}
+      <h2>{{ vs.heading }}</h2>
+    </div>
+    <div class="grid grid--3">
+      {% for v in values %}
+      <article class="value a-{{ v.accent or 'gold' }}">
+        <div class="value__dot">{{ icon(value_icons[loop.index0 % value_icons|length]) }}</div>
+        <h3>{{ v.name }}</h3>
+        <p>{{ v.body }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% if vs.link %}
+    <p style="margin-top:2.25rem;text-align:center">
+      <a class="arrow-link" href="{{ vs.link.url }}">{{ vs.link.label }}</a>
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+{% set es = page.events_section %}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      {% if es.eyebrow %}<p class="eyebrow">{{ es.eyebrow }}</p>{% endif %}
+      <h2>{{ es.heading }}</h2>
+      <p>{{ es.body }}</p>
+    </div>
+
+    {% if upcoming_events %}
+      {% for e in upcoming_events[:3] %}{% include "_event.html" %}{% endfor %}
+      {% if es.link %}
+      <p style="margin-top:1.75rem"><a class="arrow-link" href="{{ es.link.url }}">{{ es.link.label }}</a></p>
+      {% endif %}
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-state__mark">{{ icon("calendar") }}</div>
+        <h3>Our first events are being planned now</h3>
+        <p>We are lining up speaker Q&amp;As, discussion groups, and workshops for the fall. Join the mailing list and you will hear about them first.</p>
+        <a class="btn btn--dark" href="{{ es.link.url if es.link else 'join.html' }}">Get on the list</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% set rs = page.roadmap_section %}
+{% if roadmap %}
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      {% if rs.eyebrow %}<p class="eyebrow">{{ rs.eyebrow }}</p>{% endif %}
+      <h2>{{ rs.heading }}</h2>
+      <p>{{ rs.body }}</p>
+    </div>
+    {% include "_roadmap.html" %}
+  </div>
+</section>
+{% endif %}
+
+{% set c = page.cta %}
+{% if c %}
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="cta-band__text">
+        <h2>{{ c.heading }}</h2>
+        <p>{{ c.body }}</p>
+      </div>
+      {% if c.button %}<a class="btn btn--primary" href="{{ c.button.url }}">{{ c.button.label }}</a>{% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

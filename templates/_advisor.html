@@ -1,0 +1,13 @@
+<article class="person">
+  {% if a.photo %}
+  <img class="person__avatar" src="assets/img/{{ a.photo }}" alt="{{ a.name }}" loading="lazy" width="68" height="68">
+  {% else %}
+  <div class="person__avatar" aria-hidden="true">{{ a.initials }}</div>
+  {% endif %}
+  {% if a.status == "prospective" %}<span class="tag tag--prospective">Prospective</span>{% endif %}
+  <div class="person__name">{{ a.name }}</div>
+  {% if a.title or a.affiliation %}
+  <div class="person__role">{{ a.title }}{% if a.title and a.affiliation %} · {% endif %}{{ a.affiliation }}</div>
+  {% endif %}
+  {% if a.bio %}<p class="person__desc">{{ a.bio }}</p>{% endif %}
+</article>

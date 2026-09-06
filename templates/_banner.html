@@ -1,0 +1,10 @@
+<section class="banner">
+  {{ prism_art("banner", "banner") }}
+  <div class="wrap banner__inner">
+    <div class="banner__content">
+      <h1>{{ page.banner_heading or page.title }}</h1>
+      <div class="banner__rule"></div>
+      {% if page.banner_subheading %}<p>{{ page.banner_subheading }}</p>{% endif %}
+    </div>
+  </div>
+</section>
