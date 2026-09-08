@@ -58,20 +58,8 @@
 </svg>
 {%- endmacro %}
 
-{# The compact logo mark: the prism refraction, reduced to a monogram. #}
-{% macro logo_mark(cls="brand__mark", id="mark") -%}
-<svg class="{{ cls }}" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="{{ id }}-spectrum" x1="0" y1="0" x2="0.25" y2="1">
-      <stop offset="0%"   stop-color="#3D8ECF"/>
-      <stop offset="28%"  stop-color="#57C95F"/>
-      <stop offset="58%"  stop-color="#FFE24D"/>
-      <stop offset="80%"  stop-color="#EFA83B"/>
-      <stop offset="100%" stop-color="#FF5C6E"/>
-    </linearGradient>
-  </defs>
-  <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1.5"/>
-  <path d="M14 4 L21 4 L23 21 Z" fill="currentColor" fill-opacity=".55"/>
-  <path d="M21 4 L37 4 L37 13 L23 21 Z" fill="url(#{{ id }}-spectrum)"/>
-</svg>
+{# The CLA clock roundel, used in the header and footer. Matches favicon.svg. #}
+{% macro logo_mark(cls="brand__mark", id="mark", bg=false) -%}
+<svg class="{{ cls }}" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+<defs><linearGradient id="{{ id }}-g" x1="0.1" y1="0" x2="1" y2="0.85"><stop offset="0%" stop-color="#3D8ECF"/><stop offset="14%" stop-color="#3FBF97"/><stop offset="30%" stop-color="#57C95F"/><stop offset="44%" stop-color="#B6DC4E"/><stop offset="60%" stop-color="#FFE24D"/><stop offset="78%" stop-color="#EFA83B"/><stop offset="90%" stop-color="#F7854A"/><stop offset="100%" stop-color="#FF5C6E"/></linearGradient></defs>{% if bg %}<rect width="48" height="48" rx="11" fill="#383735"/>{% endif %}<circle cx="24" cy="24" r="20" fill="none" stroke="#6B6762" stroke-width="2.1"/><path d="M 24.00 4.00 A 20 20 0 0 1 38.14 38.14" fill="none" stroke="url(#{{ id }}-g)" stroke-width="3.2" stroke-linecap="round"/><path d="M 24.00 7.60 L 24.00 5.80" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 32.20 9.80 L 33.10 8.24" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 38.20 15.80 L 39.76 14.90" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 40.40 24.00 L 42.20 24.00" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 38.20 32.20 L 39.76 33.10" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 32.20 38.20 L 33.10 39.76" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 24.00 40.40 L 24.00 42.20" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 15.80 38.20 L 14.90 39.76" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 9.80 32.20 L 8.24 33.10" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 7.60 24.00 L 5.80 24.00" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 9.80 15.80 L 8.24 14.90" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 15.80 9.80 L 14.90 8.24" stroke="#6B6762" stroke-width="1.30" stroke-linecap="round"/><path d="M 32.20 32.20 L 35.46 35.46" stroke="#6B6762" stroke-width="1.7" stroke-linecap="round"/><g fill="#E9E5DD"><g transform="translate(9.986 28.235) scale(0.01440)"><path d="M190.86 -350.00Q190.86 -420.00 222.22 -470.78Q253.57 -521.57 304.64 -549.28Q355.72 -577.00 416.14 -577.00Q466.14 -577.00 505.29 -564.21Q544.43 -551.43 575.64 -529.43Q606.86 -507.43 630.00 -480.71V-641.57Q587.29 -676.29 536.79 -695.29Q486.29 -714.29 409.29 -714.29Q328.57 -714.29 260.14 -688.00Q191.71 -661.71 141.57 -613.00Q91.43 -564.29 63.57 -497.43Q35.71 -430.57 35.71 -350.00Q35.71 -269.43 63.57 -202.57Q91.43 -135.71 141.57 -87.00Q191.71 -38.29 260.14 -12.00Q328.57 14.29 409.29 14.29Q486.29 14.29 536.79 -4.93Q587.29 -24.14 630.00 -58.43V-219.29Q606.86 -192.57 575.64 -170.79Q544.43 -149.00 505.29 -136.00Q466.14 -123.00 416.14 -123.00Q355.72 -123.00 304.64 -150.72Q253.57 -178.43 222.22 -229.50Q190.86 -280.57 190.86 -350.00Z M726.71 -700.00V0.00H1148.86V-125.00H869.57V-700.00Z M1372.72 -158.57H1742.72L1725.57 -272.00H1389.86ZM1555.72 -473.43 1661.14 -229.57 1659.29 -193.71 1749.29 0.00H1910.72L1555.72 -741.43L1200.71 0.00H1362.15L1454.14 -200.14L1451.43 -231.86Z"/></g></g></svg>
 {%- endmacro %}

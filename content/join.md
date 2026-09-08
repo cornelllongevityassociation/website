@@ -3,8 +3,7 @@ title: Join Us
 template: join
 banner_heading: Join us
 banner_subheading: >-
-  General membership is open to every Cornell student, on every campus, from
-  every major. No application, no prerequisites.
+  General membership is open to every Cornell student. Hope to see you there! 
 ways_heading: Ways to get involved
 ways:
   - name: Become a general member
@@ -41,13 +40,3 @@ contact_heading: Get in touch
 contact_body: >-
   Email is the fastest way to reach us. We read everything.
 ---
-
-## What membership actually looks like
-
-There is no minimum commitment. Some members come to one speaker event a
-semester; others help plan them. You will get an email when something is
-happening, and you decide whether it is worth your Tuesday evening.
-
-If you want more than that, tell us. The club is new enough that anyone who
-wants to start a reading group, organise a lab tour, or run a debate night can
-simply do it with our support.

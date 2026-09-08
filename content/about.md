@@ -1,12 +1,10 @@
 ---
 title: About
 template: about
-banner_heading: About the club
+banner_heading: About the Cornell Longevity Association
 banner_subheading: >-
-  Who we are, what we are trying to build, and the values we want to build it
-  with.
+
 goals_heading: Goals of the club
-values_heading: Core values
 advisors_heading: Our advisors
 advisors_body: >-
   Faculty and researchers who have agreed to help guide the club, or who we are
@@ -17,7 +15,7 @@ roadmap_body: >-
   before and during our first semester.
 ---
 
-## Why this club exists
+## Our mission
 
 Cornell already does an enormous amount of work that touches longevity — in
 molecular biology and genetics, in nutrition, in biomedical engineering, in
@@ -30,11 +28,10 @@ place where a sophomore who just read a paper on cellular senescence, a
 philosophy major with strong opinions about life extension, and a student
 founder building in the space can all end up in the same room.
 
-## What we actually do
+## Club Structure
 
-We run the club as three branches — Scientific Research, Philosophy, Ethics and
-Arts, and Industry — each with its own programming and its own representative on
-the e-board. Members can sit in one branch or move between all three. In
+The club has branches — Scientific Research, Philosophy, Ethics and
+Arts, and Industry. Members can sit in one branch or move between all three. In
 practice that means speaker Q&As with Cornell labs, ethics debates and
 discussion groups, art and dance programming, workshops on healthy bodies and
 minds, and networking events with people building longevity companies.

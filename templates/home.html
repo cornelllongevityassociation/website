@@ -56,6 +56,7 @@
 </section>
 
 {% set vs = page.values_section %}
+{% if values %}
 <section class="section section--dark">
   <div class="wrap">
     <div class="section-head section-head--center">
@@ -78,6 +79,7 @@
     {% endif %}
   </div>
 </section>
+{% endif %}
 
 {% set es = page.events_section %}
 <section class="section">

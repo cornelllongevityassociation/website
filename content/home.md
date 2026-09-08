@@ -3,16 +3,15 @@ title: Home
 template: home
 hero:
   # The big dark banner at the top of the homepage.
-  eyebrow: Cornell University
   heading: Cornell Longevity Association
   subheading: >-
     A hub for the students, researchers, and builders asking what it means to
     live longer — and live better — at every Cornell campus.
   primary_button:
-    label: Join the club
+    label: Join the Association
     url: join.html
   secondary_button:
-    label: What we do
+    label: About
     url: about.html
 
 # The short statement directly under the banner.
@@ -37,6 +36,8 @@ branches_section:
     label: Explore the branches
     url: branches.html
 
+# Only appears while content/values.yml exists. Delete that file and this
+# whole section disappears from the page; restore it and this comes back.
 values_section:
   eyebrow: Core values
   heading: How we work

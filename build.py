@@ -267,7 +267,6 @@ def build() -> int:
 
 def serve(port: int) -> None:
     import http.server
-    import socketserver
 
     class Handler(http.server.SimpleHTTPRequestHandler):
         def __init__(self, *a, **kw):
@@ -276,8 +275,13 @@ def serve(port: int) -> None:
         def log_message(self, *a):  # keep the console quiet
             pass
 
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", port), Handler) as httpd:
+    # Threading matters: browsers hold keep-alive connections open, and a
+    # single-threaded server would stall every later request behind them.
+    class Server(http.server.ThreadingHTTPServer):
+        daemon_threads = True
+        allow_reuse_address = True
+
+    with Server(("", port), Handler) as httpd:
         print(f"\n  Serving http://localhost:{port}  (Ctrl+C to stop)\n")
         try:
             httpd.serve_forever()

@@ -1,16 +1,13 @@
 ---
 title: Branches
 template: branches
-banner_heading: Three branches
+banner_heading: Subteams
 banner_subheading: >-
-  Longevity is not only a laboratory question. The club is organised so that a
-  biologist, a philosopher, and a founder all have somewhere to land.
-outro_heading: Not sure which one is for you?
+  
+outro_heading: How to get involved
 outro_body: >-
-  You do not have to pick. Members are welcome in every branch, and most of our
-  events are open to the whole club. If you want to help shape what a branch
-  does this year, its representative position may still be open.
+  The club is currently open to all new members! No application required. 
 outro_button:
-  label: See open positions
+  label: See E-Board positions
   url: join.html
 ---
