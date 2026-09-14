@@ -28,18 +28,15 @@ description: >-
 nav:
   - label: About
     url: about.html
-  - label: Branches
-    url: branches.html
   - label: Team
     url: team.html
   - label: Events
     url: events.html
-  - label: Join Us
-    url: join.html
 
-# The button at the far right of the navigation bar.
+# The button at the far right of the navigation bar. This also serves as the
+# "Join Us" link — there is no separate plain-text nav entry for it.
 nav_cta:
-  label: Get Involved
+  label: Join Us
   url: join.html
 
 # ---------------------------------------------------------------------------

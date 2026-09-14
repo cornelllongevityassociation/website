@@ -43,7 +43,7 @@
       <a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
       {% endfor %}
       {% if site.nav_cta %}
-      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="{{ site.nav_cta.url }}">{{ site.nav_cta.label }}</a></span>
+      <span class="nav-cta"><a class="btn btn--primary btn--sm"{% if site.nav_cta.url == page.url %} aria-current="page"{% endif %} href="{{ site.nav_cta.url }}">{{ site.nav_cta.label }}</a></span>
       {% endif %}
     </nav>
   </div>
@@ -74,6 +74,9 @@
           {% for item in site.nav %}
           <li><a href="{{ item.url }}">{{ item.label }}</a></li>
           {% endfor %}
+          {% if site.nav_cta %}
+          <li><a href="{{ site.nav_cta.url }}">{{ site.nav_cta.label }}</a></li>
+          {% endif %}
         </ul>
       </div>
 

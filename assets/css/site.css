@@ -257,11 +257,14 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 3rem 0; }
 
 .nav { display: flex; align-items: center; gap: .3rem; }
 .nav > a {
+  position: relative;
+  display: inline-flex; align-items: center;
+  height: 2.4rem;
   font-family: var(--font-display);
   font-size: .95rem; font-weight: 400;
   color: var(--ink-invert-muted);
   text-decoration: none;
-  padding: .5rem .72rem;
+  padding: 0 .72rem;
   border-radius: 8px;
   transition: color .16s ease, background-color .16s ease;
   white-space: nowrap;
@@ -269,11 +272,25 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 3rem 0; }
 .nav > a:hover { color: var(--cream); background: rgba(233,229,221,.08); }
 .nav > a[aria-current="page"] { color: var(--cream); }
 .nav > a[aria-current="page"]::after {
-  content: ""; display: block; height: 2px; border-radius: 2px;
-  background: var(--prism-gold); margin-top: 3px;
+  content: ""; position: absolute; left: .72rem; right: .72rem; bottom: .3rem;
+  height: 2px; border-radius: 2px;
+  background: var(--prism-gold);
 }
 
-.nav-cta { margin-left: .6rem; }
+/* The "Join Us" button doubles as a nav link — same active-state underline
+   as the plain nav items, at the same height, just white to sit on the gold
+   button background instead of the gold-on-transparent used elsewhere. */
+.nav-cta { margin-left: .6rem; display: inline-flex; align-items: center; height: 2.4rem; }
+.nav-cta .btn {
+  position: relative;
+  height: 100%; box-sizing: border-box;
+  padding-top: 0; padding-bottom: 0;
+}
+.nav-cta .btn[aria-current="page"]::after {
+  content: ""; position: absolute; left: 1.05rem; right: 1.05rem; bottom: .3rem;
+  height: 2px; border-radius: 2px;
+  background: #2E2110;
+}
 
 .nav-toggle {
   display: none;
@@ -293,11 +310,13 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 3rem 0; }
     padding: .5rem var(--gutter) 1.15rem;
   }
   .nav[hidden] { display: none; }
-  .nav > a { padding: .78rem .25rem; border-radius: 0; }
+  .nav > a { height: auto; padding: .78rem .25rem; border-radius: 0; }
   .nav > a + a { border-top: 1px solid rgba(233,229,221,.08); }
   .nav > a[aria-current="page"]::after { display: none; }
   .nav > a[aria-current="page"] { color: var(--prism-gold); }
-  .nav-cta { margin: .85rem 0 0; }
+  .nav-cta { height: auto; margin: .85rem 0 0; }
+  .nav-cta .btn { height: auto; padding-top: .5rem; padding-bottom: .5rem; }
+  .nav-cta .btn[aria-current="page"]::after { display: none; }
   .nav .btn { width: 100%; }
 }
 
