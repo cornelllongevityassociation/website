@@ -26,7 +26,6 @@
 
           <div class="person__name">{{ m.holder or "Position open" }}</div>
           <div class="person__role">{{ m.role }}{% if m.positions and m.positions != 1 %} · {{ m.positions }} positions{% endif %}</div>
-          {% if m.description %}<p class="person__desc">{{ m.description }}</p>{% endif %}
 
           {% if m.email or m.linkedin %}
           <div class="person__meta">

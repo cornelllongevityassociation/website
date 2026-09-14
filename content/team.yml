@@ -53,9 +53,8 @@
   linkedin:
   email:
 
-# ---- Operations -----------------------------------------------------------
 - role: Marketing / Public Relations
-  group: Operations
+  group: Leadership
   positions: 1
   description: >-
     In charge of managing club social media and website. Make posters or reach
@@ -65,8 +64,9 @@
   linkedin:
   email:
 
+# ---- Open positions ---------------------------------------------------
 - role: Events Coordinator
-  group: Operations
+  group: Open Positions
   positions: 1-2
   description: >-
     Oversee the planning and logistics of events the club plans to host. Work
@@ -76,9 +76,8 @@
   linkedin:
   email:
 
-# ---- Branch representatives ----------------------------------------------
 - role: Scientific Research Representative
-  group: Branch Representatives
+  group: Open Positions
   positions: 1
   description: >-
     Keep track of the interests within the members of the Scientific Research
@@ -90,7 +89,7 @@
   email:
 
 - role: Philosophy, Ethics and Arts Representative
-  group: Branch Representatives
+  group: Open Positions
   positions: 1
   description: >-
     Keep track of the interests within the members of the Philosophy, Ethics and
@@ -102,7 +101,7 @@
   email:
 
 - role: Industry Representative
-  group: Branch Representatives
+  group: Open Positions
   positions: 1
   description: >-
     Keep track of the interests within the members of the Industry section in
