@@ -76,3 +76,7 @@ blank out `base_url`.
 - `_site/` is generated and git-ignored — GitHub Actions builds it on every push.
 - A blank value in `content/` renders as nothing, so deleting an optional line
   will never break the build.
+- The "Ways to get involved" section on the Join Us page (`templates/join.html`)
+  is currently hidden — wrapped in a `{# ... #}` Jinja comment rather than
+  deleted, so it can be switched back on by removing that comment. Its content
+  (`page.ways` / `page.ways_heading`) is still there in `content/join.md`.

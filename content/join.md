@@ -31,11 +31,6 @@ ways:
       something, get in touch. Cross-campus collaboration is the entire point of
       this organization.
 
-open_roles_heading: Open positions
-open_roles_body: >-
-  These e-board roles have not been filled yet. Full descriptions are on the
-  team page.
-
 contact_heading: Get in touch
 contact_body: >-
   Email is the fastest way to reach us. We read everything.

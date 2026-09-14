@@ -2,6 +2,11 @@
 {% block content %}
 {% include "_banner.html" %}
 
+{# "Ways to get involved" is hidden site-wide for now but kept here as a
+   ready-to-use template — see README.md for how to turn it back on. The
+   content underneath (page.ways / page.ways_heading in content/join.md) was
+   left in place. #}
+{#
 {% if page.ways %}
 <section class="section">
   <div class="wrap">
@@ -21,33 +26,7 @@
   </div>
 </section>
 {% endif %}
-
-{% if open_roles %}
-<section class="section section--alt">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Now hiring</p>
-      <h2>{{ page.open_roles_heading }}</h2>
-      <p>{{ page.open_roles_body }}</p>
-    </div>
-    <div class="grid grid--3">
-      {% for m in open_roles %}
-      <article class="person person--open">
-        <span class="tag tag--open">Open</span>
-        <div class="person__name">{{ m.role }}</div>
-        <div class="person__role">{{ m.positions }} position{{ "s" if m.positions != 1 }}{% if m.group %} · {{ m.group }}{% endif %}</div>
-        <p class="person__desc">{{ m.description }}</p>
-      </article>
-      {% endfor %}
-    </div>
-    {% if site.contact and site.contact.email %}
-    <p style="margin-top:2.25rem">
-      <a class="btn btn--primary" href="mailto:{{ site.contact.email }}?subject=E-board%20application%20%E2%80%94%20Cornell%20Longevity%20Association">Email us about a position</a>
-    </p>
-    {% endif %}
-  </div>
-</section>
-{% endif %}
+#}
 
 {% if page.body_html %}
 <section class="section">
