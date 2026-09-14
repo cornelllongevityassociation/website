@@ -52,6 +52,14 @@ social:
   github: https://github.com/cornelllongevityassociation
 
 # ---------------------------------------------------------------------------
+# LUMA — the club's live event calendar. Used for the "View on Luma" buttons
+# and the embedded calendar widget on the Events page.
+# ---------------------------------------------------------------------------
+luma:
+  url: https://lu.ma/cal-j7WOMK87Z16WqNn
+  embed_url: https://luma.com/embed/calendar/cal-j7WOMK87Z16WqNn/events
+
+# ---------------------------------------------------------------------------
 # FOOTER
 # ---------------------------------------------------------------------------
 footer:

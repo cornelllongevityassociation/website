@@ -647,6 +647,9 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 3rem 0; }
 .empty-state h2, .empty-state h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); font-weight: 500; margin-bottom: .55rem; }
 .empty-state p { color: var(--ink-muted); max-width: 32rem; margin: 0 auto 1.6rem; }
 
+.luma-embed { border-radius: var(--radius-lg); overflow: hidden; }
+.luma-embed iframe { display: block; max-width: 100%; }
+
 /* ==========================================================================
    Roadmap timeline
    ========================================================================== */

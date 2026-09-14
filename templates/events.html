@@ -7,6 +7,16 @@
     {% if upcoming_events %}
       <div class="section-head"><h2>{{ page.upcoming_heading }}</h2></div>
       {% for e in upcoming_events %}{% include "_event.html" %}{% endfor %}
+    {% elif site.luma %}
+      <div class="wrap--narrow" style="margin-inline:auto">
+        <div class="section-head"><h2>Our Calendar</h2></div>
+        <div class="luma-embed">
+          <iframe src="{{ site.luma.embed_url }}" width="100%" height="450" frameborder="0" style="border: 1px solid #bfcbda88; border-radius: 4px;" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <p style="margin-top:1.5rem;text-align:center">
+          <a class="arrow-link" href="{{ site.luma.url }}" target="_blank" rel="noopener">Open the full calendar on Luma</a>
+        </p>
+      </div>
     {% else %}
       <div class="empty-state">
         <div class="empty-state__mark">{{ icon("calendar") }}</div>
