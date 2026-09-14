@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import re
 import shutil
 import sys
@@ -190,6 +191,12 @@ def prepare_socials(raw: dict | None):
 # Build
 # --------------------------------------------------------------------------
 
+def asset_url(path: str) -> str:
+    """Append a content hash so browsers re-fetch an asset whenever it changes."""
+    digest = hashlib.sha1((ROOT / path).read_bytes()).hexdigest()[:10]
+    return f"{path}?v={digest}"
+
+
 def build() -> int:
     today = dt.date.today()
 
@@ -230,6 +237,7 @@ def build() -> int:
         value_icons=VALUE_ICONS,
         join_icons=JOIN_ICONS,
         year=today.year,
+        asset=asset_url,
     )
 
     # Every content/*.md becomes one page. index.html comes from home.md.
@@ -271,6 +279,10 @@ def serve(port: int) -> None:
     class Handler(http.server.SimpleHTTPRequestHandler):
         def __init__(self, *a, **kw):
             super().__init__(*a, directory=str(OUTPUT), **kw)
+
+        def end_headers(self):
+            self.send_header("Cache-Control", "no-cache")
+            super().end_headers()
 
         def log_message(self, *a):  # keep the console quiet
             pass
