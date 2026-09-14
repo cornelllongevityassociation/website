@@ -5,8 +5,7 @@ hero:
   # The big dark banner at the top of the homepage.
   heading: Cornell Longevity Association
   subheading: >-
-    A hub for the students, researchers, and builders asking what it means to
-    live longer — and live better — at every Cornell campus.
+    The CLA is Cornell's forum for advancing the field of longevity research and fostering a community of scientists, artists, philosophers and entreperneurs. How do we live longer, and what does it mean if we do? 
   primary_button:
     label: Join the Association
     url: join.html
@@ -16,25 +15,19 @@ hero:
 
 # The short statement directly under the banner.
 intro:
-  heading: Longevity science is moving fast. Cornell should be part of it.
+  heading: Aging is the world's most pressing health problem.
   body: >-
-    Research on the biology of aging is advancing quickly, and it is spread
-    across labs, colleges, and campuses that rarely talk to each other. The
-    Cornell Longevity Association exists to close that gap — to gather the
-    people already doing this work, introduce them to students who want in,
-    and give both a place to build something together.
+   Approximately two-thirds of all worldwide deaths are caused by chronic, age-related diseases. This equates to 100,000 deaths, every day. Deaths caused by age-related diseases are increasing as the world ages; in developed countries, almost 90% of people die from age-related diseases, rather than two-thirds. In economic terms, slowing aging down enough to increase life expectancy by 1 year is worth $38 trillion. However, numbers alone do not reflect the terrible social burden of years spent suffering from chronic age-related disease, even before death.
+  
+   How can we evaluate the research of scientists working to develop breakthrough treatments for age-related disease? How can the personal choices we make lead to longer, healthier lives? What longevity technologies and businesses should we support, and how? 
 
-# The three coloured cards. Full detail lives in branches.yml.
-branches_section:
-  eyebrow: Three branches
-  heading: One field, three ways in
+cta:
+  heading: Find out with us.
   body: >-
-    Longevity is not only a laboratory question. We run the club as three
-    connected branches so that a biologist, a philosopher, and a founder all
-    have somewhere to land.
-  link:
-    label: Explore the branches
-    url: branches.html
+    We are recruiting for e-board positions and general membership!
+  button:
+    label: Get involved
+    url: join.html
 
 # Only appears while content/values.yml exists. Delete that file and this
 # whole section disappears from the page; restore it and this comes back.
@@ -60,14 +53,6 @@ roadmap_section:
   heading: What we're working on
   body: >-
     We are a new organization. Here is exactly where we are and what comes next.
-
-cta:
-  heading: Come build this with us.
-  body: >-
-    We are recruiting for e-board positions and general members across all three
-    branches. No prior background in aging biology required — curiosity is the
-    only prerequisite.
-  button:
-    label: Get involved
-    url: join.html
 ---
+
+

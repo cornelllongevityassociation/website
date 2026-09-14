@@ -23,37 +23,12 @@
 <section class="section">
   <div class="wrap wrap--narrow" style="text-align:center">
     <h2>{{ intro.heading }}</h2>
-    <p style="font-size:1.15rem;color:var(--ink-muted);margin-bottom:0">{{ intro.body }}</p>
+    {% for para in intro.body.split('\n') if para.strip() %}
+    <p style="font-size:1.15rem;color:var(--ink-muted);{% if loop.first %}margin-top:0;{% endif %}{% if loop.last %}margin-bottom:0;{% endif %}">{{ para.strip() }}</p>
+    {% endfor %}
   </div>
 </section>
 {% endif %}
-
-{% set bs = page.branches_section %}
-<section class="section section--alt">
-  <div class="wrap">
-    <div class="section-head section-head--center">
-      {% if bs.eyebrow %}<p class="eyebrow">{{ bs.eyebrow }}</p>{% endif %}
-      <h2>{{ bs.heading }}</h2>
-      <p>{{ bs.body }}</p>
-    </div>
-
-    <div class="grid grid--3">
-      {% for b in branches %}
-      <article class="card a-{{ b.accent or 'gold' }}">
-        <div class="card__icon">{{ icon(branch_icons[loop.index0 % branch_icons|length]) }}</div>
-        <h3>{{ b.name }}</h3>
-        <p>{{ b.summary }}</p>
-      </article>
-      {% endfor %}
-    </div>
-
-    {% if bs.link %}
-    <p style="margin-top:2rem;text-align:center">
-      <a class="arrow-link" href="{{ bs.link.url }}">{{ bs.link.label }}</a>
-    </p>
-    {% endif %}
-  </div>
-</section>
 
 {% set vs = page.values_section %}
 {% if values %}
@@ -81,48 +56,9 @@
 </section>
 {% endif %}
 
-{% set es = page.events_section %}
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      {% if es.eyebrow %}<p class="eyebrow">{{ es.eyebrow }}</p>{% endif %}
-      <h2>{{ es.heading }}</h2>
-      <p>{{ es.body }}</p>
-    </div>
-
-    {% if upcoming_events %}
-      {% for e in upcoming_events[:3] %}{% include "_event.html" %}{% endfor %}
-      {% if es.link %}
-      <p style="margin-top:1.75rem"><a class="arrow-link" href="{{ es.link.url }}">{{ es.link.label }}</a></p>
-      {% endif %}
-    {% else %}
-      <div class="empty-state">
-        <div class="empty-state__mark">{{ icon("calendar") }}</div>
-        <h3>Our first events are being planned now</h3>
-        <p>We are lining up speaker Q&amp;As, discussion groups, and workshops for the fall. Join the mailing list and you will hear about them first.</p>
-        <a class="btn btn--dark" href="{{ es.link.url if es.link else 'join.html' }}">Get on the list</a>
-      </div>
-    {% endif %}
-  </div>
-</section>
-
-{% set rs = page.roadmap_section %}
-{% if roadmap %}
-<section class="section section--alt">
-  <div class="wrap">
-    <div class="section-head section-head--center">
-      {% if rs.eyebrow %}<p class="eyebrow">{{ rs.eyebrow }}</p>{% endif %}
-      <h2>{{ rs.heading }}</h2>
-      <p>{{ rs.body }}</p>
-    </div>
-    {% include "_roadmap.html" %}
-  </div>
-</section>
-{% endif %}
-
 {% set c = page.cta %}
 {% if c %}
-<section class="section">
+<section class="section" style="padding-block:clamp(0.7rem, 1.4vw, 1.2rem)">
   <div class="wrap">
     <div class="cta-band">
       <div class="cta-band__text">
@@ -134,5 +70,34 @@
   </div>
 </section>
 {% endif %}
+
+{% set es = page.events_section %}
+<section class="section">
+  <div class="wrap">
+    {% if upcoming_events %}
+      {% for e in upcoming_events[:3] %}{% include "_event.html" %}{% endfor %}
+      {% if es.link %}
+      <p style="margin-top:1.75rem"><a class="arrow-link" href="{{ es.link.url }}">{{ es.link.label }}</a></p>
+      {% endif %}
+    {% elif site.luma %}
+      <div class="wrap--narrow" style="margin-inline:auto">
+        <div class="section-head"><h2>Our Calendar</h2></div>
+        <div class="luma-embed">
+          <iframe src="{{ site.luma.embed_url }}" width="100%" height="450" frameborder="0" style="border: 1px solid #bfcbda88; border-radius: 4px;" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <p style="margin-top:1.5rem;text-align:center">
+          <a class="arrow-link" href="{{ site.luma.url }}" target="_blank" rel="noopener">Open the full calendar on Luma</a>
+        </p>
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-state__mark">{{ icon("calendar") }}</div>
+        <h3>Our first events are being planned now</h3>
+        <p>We are lining up speaker Q&amp;As, discussion groups, and workshops for the fall. Join the mailing list and you will hear about them first.</p>
+        <a class="btn btn--dark" href="{{ es.link.url if es.link else 'join.html' }}">Get on the list</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
 
 {% endblock %}
