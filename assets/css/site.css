@@ -393,13 +393,13 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 3rem 0; }
   position: relative; z-index: 2;
   padding-block: clamp(3rem, 7vw, 5.25rem);
 }
-.banner__content { max-width: 40rem; }
+.banner__content { max-width: 32rem; }
 .banner h1 { color: var(--cream); font-weight: 300; margin-bottom: 1.1rem; }
 .banner__rule {
   width: 190px; height: 3px; border-radius: 3px;
   background: var(--prism-gold); margin-bottom: 1.35rem;
 }
-.banner p { color: var(--ink-invert-muted); font-size: 1.12rem; max-width: 36rem; margin-bottom: 0; }
+.banner p { color: var(--ink-invert-muted); font-size: 1.12rem; max-width: 28.8rem; margin-bottom: 0; }
 
 /* ==========================================================================
    Prose
