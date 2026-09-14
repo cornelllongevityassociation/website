@@ -5,39 +5,32 @@
 #      gold   green   blue   coral
 # ============================================================================
 
-- name: Scientific Research
-  accent: gold
+- name: Research
+  accent: blue
   summary: >-
-    Sharing and discussing the longevity research happening inside Cornell's
-    own labs.
+    Sharing and discussing the latest in longevity research.
   points:
-    - Share and discuss the latest longevity research going on at Cornell
-    - >-
-      Run activities focused on keeping a healthy body and mind, from
-      biohacking sessions to mental health workshops
-    - Host speaker Q&As on the research being developed in our labs
-  representative: Scientific Research Representative
+    - Connect with Cornell labs researching the biology of aging.
+    - Run a journal club to discuss the latest discoveries.
+    - Host speaker events with leading scientists.
+  representative: Scientific Research Branch Lead
 
 - name: Philosophy, Ethics and Arts
   accent: green
   summary: >-
-    The harder questions — and the creative work — that a longer human life
-    brings with it.
+    Discuss the political, ethical, and artistic implications of extended human life. 
   points:
-    - >-
-      Engage students in the ethical and philosophical debates around longevity,
-      as well as the fine arts
-    - Lead dance workshops, painting sessions, debate series, and discussion groups
-    - Host a dance show or a student-led art gallery
-  representative: Philosophy, Ethics and Arts Representative
+    - Host ethical and philosophical debates around the risk of overpopulation, access to longevity therapies, and biotechnology regulation.
+    - Curate literature on the social and cultural aspects of extended lifespan and immortality.
+    - Host a dance show or a student-led art gallery.
+  representative: PEA Branch Lead
 
 - name: Industry
-  accent: blue
+  accent: gold
   summary: >-
-    The bridge between Cornell students and the people building longevity
-    companies.
+    The bridge between Cornell and the longevity biotechnology industry.
   points:
-    - Support student-led initiatives and connections to professional development
-    - Highlight what the current market for longevity science actually looks like
-    - Run speaker series and networking events with the industry's latest pioneers
-  representative: Industry Representative
+    - Organize fireside chats with industry leaders.
+    - Host networking events with entrepreneurs and investors in the longevity space.
+    - Launch careers in the longevity biotechnology industry.
+  representative: Industry Branch Lead

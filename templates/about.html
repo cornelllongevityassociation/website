@@ -2,26 +2,42 @@
 {% block content %}
 {% include "_banner.html" %}
 
-{% if page.body_html %}
+{% if page.body_html or branches %}
 <section class="section">
   <div class="wrap">
+    {% if page.body_html %}
     <div class="prose">{{ page.body_html }}</div>
-  </div>
-</section>
-{% endif %}
+    {% endif %}
 
-{% if goals %}
-<section class="section section--alt">
-  <div class="wrap wrap--narrow">
-    <div class="section-head">
-      <p class="eyebrow">Our aims</p>
-      <h2>{{ page.goals_heading }}</h2>
+    {% if branches %}
+    <div{% if page.body_html %} style="margin-top:clamp(2.5rem, 5vw, 4rem)"{% endif %}>
+      <div class="section-head section-head--center">
+        <h2>{{ page.areas_heading }}</h2>
+        {% if page.areas_eyebrow %}<p class="eyebrow">{{ page.areas_eyebrow }}</p>{% endif %}
+        {% if page.areas_body %}<p>{{ page.areas_body }}</p>{% endif %}
+      </div>
+      <div class="grid grid--3">
+        {% for b in branches %}
+        <article class="card a-{{ b.accent or 'gold' }}" id="{{ b.slug }}">
+          <div class="card__icon">{{ icon(branch_icons[loop.index0 % branch_icons|length]) }}</div>
+          <h3>{{ b.name }}</h3>
+          <p>{{ b.summary }}</p>
+          {% if b.points %}
+          <ul>
+            {% for p in b.points %}<li>{{ p }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+          {% if b.representative %}
+          <div class="card__foot">
+            {% set rep = rep_lookup.get(b.representative) %}
+            Led by the {{ b.representative }}{% if rep and rep.holder %}, {{ rep.holder }}{% elif rep %} — <a href="join.html">position open</a>{% endif %}.
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
     </div>
-    <ol class="goals">
-      {% for g in goals %}
-      <li><span class="goals__num">{{ "%02d"|format(loop.index) }}</span><span>{{ g }}</span></li>
-      {% endfor %}
-    </ol>
+    {% endif %}
   </div>
 </section>
 {% endif %}
@@ -46,32 +62,23 @@
 </section>
 {% endif %}
 
-{% if advisors %}
-<section class="section">
+<section class="section section--tight">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Guidance</p>
-      <h2>{{ page.advisors_heading }}</h2>
-      <p>{{ page.advisors_body }}</p>
-    </div>
-    <div class="grid grid--3">
-      {% for a in advisors %}{% include "_advisor.html" %}{% endfor %}
+    <div class="cta-band">
+      <div class="cta-band__text">
+        <h2>{{ page.contact_heading }}</h2>
+        <p>{{ page.contact_body }}</p>
+      </div>
+      <div class="btn-row">
+        {% if site.contact and site.contact.email %}
+        <a class="btn btn--primary" href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+        {% endif %}
+        {% for s in socials %}
+        <a class="btn btn--ghost-invert" href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>
-{% endif %}
-
-{% if roadmap %}
-<section class="section section--alt">
-  <div class="wrap">
-    <div class="section-head section-head--center">
-      <p class="eyebrow">Roadmap</p>
-      <h2>{{ page.roadmap_heading }}</h2>
-      <p>{{ page.roadmap_body }}</p>
-    </div>
-    {% include "_roadmap.html" %}
-  </div>
-</section>
-{% endif %}
 
 {% endblock %}

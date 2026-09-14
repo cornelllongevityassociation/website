@@ -141,7 +141,7 @@ appears under — reuse an existing group name (`Leadership`, `Operations`,
 
 Edit the `nav:` list in `content/site.yml`. To add a genuinely new page you also
 need a new `content/<name>.md` file; ask whoever set the site up, or copy
-`content/branches.md` as a starting point.
+`content/join.md` as a starting point.
 
 ### Change the colours
 
