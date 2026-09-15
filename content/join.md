@@ -33,5 +33,5 @@ ways:
 
 contact_heading: Get in touch
 contact_body: >-
-  Email is the fastest way to reach us. We read everything.
+  We would love to hear from you.
 ---
