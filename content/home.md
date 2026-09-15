@@ -19,7 +19,7 @@ intro:
   body: >-
    Approximately two-thirds of all worldwide deaths are caused by chronic, age-related diseases. This equates to 100,000 deaths, every day. Deaths caused by age-related diseases are increasing as the world ages; in developed countries, almost 90% of people die from age-related diseases, rather than two-thirds. In economic terms, slowing aging down enough to increase life expectancy by 1 year is worth $38 trillion. However, numbers alone do not reflect the terrible social burden of years spent suffering from chronic age-related disease, even before death.
   
-   How can we evaluate the research of scientists working to develop breakthrough treatments for age-related disease? How can the personal choices we make lead to longer, healthier lives? What longevity technologies and businesses should we support, and how? 
+   How can we evaluate the research of scientists working to develop breakthrough treatments for age-related disease? How can personal and policy choices we make lead to longer, healthier lives? What longevity technologies and businesses should we support, and how? 
 
 cta:
   heading: Find out with us.
