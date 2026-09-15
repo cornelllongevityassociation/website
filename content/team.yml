@@ -12,9 +12,6 @@
 - role: President
   group: Leadership
   positions: 1
-  description: >-
-    Oversee all the different sections of the club and make sure that all events
-    are running smoothly.
   holder: Julian Sethna
   photo:
   linkedin:
@@ -23,20 +20,14 @@
 - role: Vice President
   group: Leadership
   positions: 1
-  description: >-
-    Act as a secondary lead and take on responsibilities of president when the
-    current president is absent.
   holder: Joey Frikert
   photo:
   linkedin:
   email:
 
-- role: Secretary
+- role: Vice President / Secretary
   group: Leadership
   positions: 1
-  description: >-
-    Handle official records of the club, deal with internal club paperwork, and
-    send agendas to members.
   holder: Owen Karmel
   photo:
   linkedin:
@@ -45,9 +36,6 @@
 - role: Treasurer
   group: Leadership
   positions: 1
-  description: >-
-    Manages the finances of the club, making sure that all funds are properly
-    allocated and tracked.
   holder: Sam Rabinor
   photo:
   linkedin:
@@ -56,21 +44,15 @@
 - role: Marketing / Public Relations
   group: Leadership
   positions: 1
-  description: >-
-    In charge of managing club social media and website. Make posters or reach
-    out for collabs with other clubs.
   holder: Ilan Epstein
   photo:
   linkedin:
   email:
 
 # ---- Open positions ---------------------------------------------------
-- role: Events Coordinator
+- role: Social Media Chair
   group: Open Positions
-  positions: 1-2
-  description: >-
-    Oversee the planning and logistics of events the club plans to host. Work
-    with each of the heads.
+  positions: 1
   holder:
   photo:
   linkedin:
@@ -79,10 +61,6 @@
 - role: Scientific Research Representative
   group: Open Positions
   positions: 1
-  description: >-
-    Keep track of the interests within the members of the Scientific Research
-    section in the club and work with event coordinators for events regarding
-    their section.
   holder:
   photo:
   linkedin:
@@ -91,10 +69,6 @@
 - role: Philosophy, Ethics and Arts Representative
   group: Open Positions
   positions: 1
-  description: >-
-    Keep track of the interests within the members of the Philosophy, Ethics and
-    Arts section in the club and work with event coordinators for events
-    regarding their section.
   holder:
   photo:
   linkedin:
@@ -103,9 +77,6 @@
 - role: Industry Representative
   group: Open Positions
   positions: 1
-  description: >-
-    Keep track of the interests within the members of the Industry section in
-    the club and work with event coordinators for events regarding their section.
   holder:
   photo:
   linkedin:
